@@ -1,0 +1,29 @@
+﻿@using ToolTipComponent.Components
+@using ToolTipComponent.Models
+
+
+@inherits ToolTipElementComponentBase
+<div class="@CssClass">
+	@ChildContent
+	<div class="@HelperCssClass">
+		@if(Helper==default)
+		{
+			@HelperAsString
+		}
+		else
+		{
+			@Helper
+		}
+	</div>
+</div>
+
+@code {
+	[Parameter] public RenderFragment ChildContent { get; set; }
+    protected override async Task OnParametersSetAsync()
+    {
+
+		if(string.IsNullOrEmpty(HtmlId)) { HtmlId = $"Anchor-{StateContainer.IncrementAnchorsCount()}"; }
+		thisElement = new ToolTipAnchorModel(StateContainer,HtmlId);
+        await base.OnParametersSetAsync();
+    }
+}

@@ -1,0 +1,28 @@
+﻿
+@using ToolTipComponent.Models
+@inherits ToolTipElementComponentBase
+
+<div id="@HtmlId" class="@CssClass" @onclick="@(()=>Toggle())">
+	<span class="bi-h bi-question-circle"></span>
+    @if (@Helper != null)
+    {
+        <div class="@HelperCssClass">
+            @Helper
+        </div>
+    }
+</div>
+
+@code{
+    protected bool ToolTipsAreActive = false;
+    protected override async Task OnParametersSetAsync()
+    {
+        thisElement = new ToolTipTogglerModel(StateContainer,HtmlId);
+        await base.OnParametersSetAsync();
+    }
+
+
+    protected void Toggle(){
+        ToolTipsAreActive = !ToolTipsAreActive;
+        ((ToolTipTogglerModel)thisElement).ActivateToolTip();
+    }
+}

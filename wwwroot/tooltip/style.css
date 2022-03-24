@@ -1,0 +1,118 @@
+@font-face {
+  font-family: 'tool-tip-icon';
+  src: url('/tooltip-icon.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.icon-ToolTip-Toggler {
+  font-family: 'tool-tip-icon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-ToolTip-Toggler .path1:before {
+  content: "\e900";
+  color: rgb(0, 0, 0);
+}
+.icon-ToolTip-Toggler .path2:before {
+  content: "\e901";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-ToolTip-Toggler .path3:before {
+  content: "\e902";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+  opacity: 0.772;
+}
+.ToolTip-Anchor{
+	border-radius:0.25em;
+	position:relative;
+    display: inline-block;
+	margin:auto;
+}
+.ToolTip-Anchor.ToolTip-Displayed{
+	color: var(--OrangeDark);
+	font-weight:bold;
+    text-decoration: underline dotted var(--OrangeDark);
+	cursor:help;
+}
+
+.ToolTip-Helper {
+	visibility: hidden;
+	position: absolute;
+	width: 120px;
+	bottom: 100%;
+	left: 50%;
+	margin-left: -60px;
+	background-color: #363636;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	z-index: 10000;
+}
+
+.ToolTip-Helper::after {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: #555 transparent transparent transparent;
+}
+
+.ToolTip-Displayed:hover .ToolTip-Helper,
+.ToolTip-Toggler.Toggler-On .ToolTip-Helper {
+	visibility: visible;
+}
+
+.ToolTip-Toggler{
+	border-radius:0.25em;
+	position:relative;
+    display: inline-block;
+	margin:auto;
+    cursor: help;
+}
+.ToolTip-Toggler span{
+	padding:unset;
+}
+
+.ToolTip-Toggler.Toggler-Off {
+	color: var(--Text-Header);
+}
+.ToolTip-Toggler.Toggler-Off:hover{
+	color:var(--Text-Header-Active);
+}
+.ToolTip-Toggler.Toggler-On{
+	background:var(--Background-Header-Active);
+	color:var(--Text-Header);
+}
+.ToolTip-Toggler.Toggler-On:hover {
+	background: var(--BlackLight);
+	color: var(--Text-Header-Active);
+}
+.ToolTip-Helper{
+	position:absolute;
+	left:50%;
+	background:var(--WhiteDark);
+	width:160px;
+	border-radius:0.25em;
+	padding:5px 5px;
+	z-index:1;
+	transform:translate(-50%,20%);
+}
+
+.ToolTip-Toggler.Toggler-Off .ToolTip-Helper{
+	visibility:hidden;
+}
