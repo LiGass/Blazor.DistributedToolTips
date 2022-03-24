@@ -10,6 +10,7 @@ namespace ToolTips.Components
 		[Inject] protected IToolTipState StateContainer { get; set; }
 		[Inject] protected NavigationManager NavManager { get; set; }
 		[Parameter] public string HtmlId { get; set; }
+		[Parameter] public RenderFragment ChildContent { get; set; }
 		[Parameter] public RenderFragment Helper { get; set; } = default;
 		[Parameter] public string HelperAsString { get; set; } = string.Empty;
 		[Parameter] public string CustomCssClass { get; set; } = string.Empty;

@@ -2,7 +2,13 @@
 @inherits ToolTipElementComponentBase
 
 <div id="@HtmlId" class="@CssClass" @onclick="@(()=>Toggle())">
-	<span class="bi-h icon-ToolTip-Toggler"></span>
+	@if(ChildContent == null)
+    {
+        <span class="bi-h icon-ToolTip-Toggler" />
+    }
+    else{
+        @ChildContent
+    }
     @if (@Helper != null)
     {
         <div class="@HelperCssClass">
