@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Routing;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace ToolTips.Models
 {

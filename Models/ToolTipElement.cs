@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Components;
-using System;
+﻿using System;
 
 namespace ToolTips.Models
 {
@@ -17,7 +16,6 @@ namespace ToolTips.Models
 		{
 			if (_container == null) { throw new ArgumentNullException(nameof(container), "A ToolTipState Component must be implemented."); }
 			_container = container;
-			//_container.DisplayStateChanged += OnDisplayStateChanged;
 		}
 		public string GetToolTipType() { return _type.ToString(); }
 		public virtual string GetCssClass()
