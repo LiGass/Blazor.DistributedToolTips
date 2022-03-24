@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Components;
 using System;
 using System.Threading.Tasks;
-using ToolTipComponent.Models;
+using ToolTips.Models;
 
-namespace ToolTipComponent.Components
+namespace ToolTips.Components
 {
 	public class ToolTipElementComponentBase : ComponentBase
 	{

@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using ToolTipComponent.Models;
+using ToolTips.Models;
 
-namespace ToolTipComponent
+namespace ToolTips
 {
 	public static class DependencyInjection
 	{

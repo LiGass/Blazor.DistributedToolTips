@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ToolTipComponent.Models
+namespace ToolTips.Models
 {
 	public interface IToolTipState : IDisposable
 	{

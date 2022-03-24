@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using System;
 
-namespace ToolTipComponent.Models
+namespace ToolTips.Models
 {
 	public abstract class ToolTipElementModel
 	{
