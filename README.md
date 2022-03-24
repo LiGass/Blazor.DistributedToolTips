@@ -15,6 +15,49 @@ Inspired by Chris Sainty's article on [creating basic ToolTips](https://chrissai
 
 # Usage (so far)
 
+1. Register ToolTip Service in your Start-up file
+
+```csharp 
+// In your file Startup.cs (server)/ App.cs (Wasm)
+...
+services.AddBlazorToolTips();
+...
+```
+
+
+2. Add Css Stylesheet to the _host.cshtml (server) / index.html (wasm)
+
+```html
+
+...
+<link src="_content/ToolTips/style.css" ref="stylesheet" />
+...
+```
+
+
+3. Add a ToolTip Toggler somewhere accessible and visible
+```html
+// In any accessible component or DOM element (header, footer...)
+...
+<ToolTipToggler />
+...
+```
+
+
+4. Add anchors anywhere on your site
+
+```html 
+// In any accessible component or DOM element (header, footer...)
+...
+<ToolTipAnchor>
+  But What is it?
+  <Helper>
+    Isn't it a nice information!
+  </Helper>
+</ToolTipAnchor>
+...
+```
+
 
 
 # What's next
