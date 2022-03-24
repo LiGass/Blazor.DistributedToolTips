@@ -30,7 +30,7 @@ services.AddBlazorToolTips();
 ```html
 
 ...
-<link src="_content/ToolTips/style.css" ref="stylesheet" />
+<link src="_content/Blazor.DistributedToolTips/style.css" ref="stylesheet" />
 ...
 ```
 
