@@ -18,14 +18,14 @@ Inspired by Chris Sainty's article on [creating basic ToolTips](https://chrissai
 1. Register ToolTip Service in your Start-up file
 
 ```csharp 
-// In your file Startup.cs (server)/ App.cs (Wasm)
+// In your file Startup.cs (server)/ Program.cs (Wasm)
 ...
 services.AddBlazorToolTips();
 ...
 ```
 
 
-2. Add Css Stylesheet to the _host.cshtml (server) / index.html (wasm)
+2. Add Css Stylesheet to the _host.cshtml (server) / Index.razor (wasm)
 
 ```html
 

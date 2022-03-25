@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+	  <ProjectPriIndexName>DistributedToolTips</ProjectPriIndexName>
+	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
   
@@ -11,10 +13,6 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.0.14" />
-  </ItemGroup>
-
-  <ItemGroup>
-	  <Folder Include="Models\" />
   </ItemGroup>
 
 </Project>

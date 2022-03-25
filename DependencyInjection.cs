@@ -1,13 +1,14 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using ToolTips.Models;
+﻿
+using DistributedToolTips;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace ToolTips
+namespace DistributedToolTips
 {
-	public static class DependencyInjection
-	{
-		public static void AddBlazorToolTips(this IServiceCollection services)
-		{
-			services.AddSingleton<IToolTipState, ToolTipState>();
-		}
-	}
+    public static class DependencyInjection
+    {
+        public static void AddBlazorToolTips(this IServiceCollection services)
+        {
+            services.AddScoped<IToolTipState, ToolTipState>();
+        }
+    }
 }

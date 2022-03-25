@@ -1,0 +1,100 @@
+.ToolTip-Helper, .ToolTip-Helper::after{
+	--helper-bck: #e9e8e8;
+	--helper-brd:#6c757d;
+	--helper-txt:#363636;
+}
+@media(prefers-color-scheme:dark)
+{
+	[class*="Helper"]{
+		--helper-bck: #363636;
+		--helper-brd:#6c757d;
+		--helper-txt:#e9e8e8;
+	}	
+}
+
+.ToolTip-Anchor{
+	border-radius:0.25em;
+	position:relative;
+    display: inline-block;
+	margin:auto;
+}
+.ToolTip-Anchor.ToolTip-Displayed
+{
+	color: #c17009;
+	font-weight:bold;
+    text-decoration: underline dotted #c17009;
+	text-underline-offset:0.25em;
+	cursor:help;
+}
+
+.ToolTip-Helper {
+	visibility: hidden;
+	position: absolute;
+	width: 120px;
+	bottom: 100%;
+	margin-left: -60px;
+	background-color: var(--helper-bck);
+	border-color:;
+	border: 2px solid var(--helper-brd);
+	color: var(--helper-txt);
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	z-index: 10000;
+}
+.ToolTip-Helper{
+	visibility:hidden;
+}
+
+
+.ToolTip-Helper::after {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: #6c757d transparent transparent transparent;
+}
+
+.ToolTip-Displayed:hover .ToolTip-Helper,
+.ToolTip-Toggler.Toggler-On:hover .ToolTip-Helper {
+	visibility: visible;
+}
+
+.ToolTip-Toggler{
+	border-radius:0.45em;
+	position:relative;
+    display: inline-block;
+	margin:auto;
+    cursor: help;
+}
+.ToolTip-Toggler span{
+	padding:unset;
+}
+
+.ToolTip-Toggler.Toggler-Off svg,
+.ToolTip-Toggler.Toggler-On:hover svg{
+	fill: #c17009;
+}
+.ToolTip-Toggler.Toggler-Off:hover svg,
+.ToolTip-Toggler.Toggler-On svg{
+	fill:transparent;
+}
+.ToolTip-Toggler.Toggler-Off:hover,
+.ToolTip-Toggler.Toggler-On{
+	background:#c17009;
+}
+.ToolTip-Toggler.Toggler-On:hover,
+.ToolTip-Toggler.Toggler-Off{
+	background:transparent;
+}
+.ToolTip-Helper{
+	position:absolute;
+	left:50%;
+	width:160px;
+	border-radius:0.25em;
+	padding:5px 5px;
+	z-index:1;
+}
