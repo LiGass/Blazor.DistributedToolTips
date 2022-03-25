@@ -17,7 +17,7 @@ Inspired by Chris Sainty's article on [creating basic ToolTips](https://chrissai
 
 1. Register ToolTip Service in your Start-up file
 
-```csharp 
+```csharp Cancel changes
 // In your file Startup.cs (server)/ Program.cs (Wasm)
 ...
 services.AddBlazorToolTips();
@@ -63,7 +63,7 @@ services.AddBlazorToolTips();
 # What's next
 
 ## Difficulties:
-**Keeping it simple, stupid**
+**Keeping it simple, stupid** and **Being SOLID**
 
 **Implementing a json file for storing content**
 
