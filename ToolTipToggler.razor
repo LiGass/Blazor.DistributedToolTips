@@ -1,5 +1,5 @@
-﻿@using DistributedToolTips
-
+﻿@using DistributedToolTips;
+@using DistributedToolTips.Models
 @inherits ToolTipElementComponentBase
 
 
@@ -29,8 +29,8 @@
         await base.OnParametersSetAsync();
     }
 
-
     protected void Toggle(){
         ((ToolTipTogglerModel)thisElement).ActivateToolTip();
     }
+
 }

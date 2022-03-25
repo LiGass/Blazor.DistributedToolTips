@@ -1,9 +1,10 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using DistributedToolTips.Models;
+using Microsoft.AspNetCore.Components;
 using System.Threading.Tasks;
 
 namespace DistributedToolTips
 {
-    public class ToolTipElementComponentBase : ComponentBase
+	public class ToolTipElementComponentBase : ComponentBase
     {
         [Inject] protected IToolTipState StateContainer { get; set; }
         [Inject] protected NavigationManager NavManager { get; set; }
@@ -19,6 +20,7 @@ namespace DistributedToolTips
         protected override async Task OnInitializedAsync()
         {
             StateContainer.OnChange += StateHasChanged;
+            await base.OnInitializedAsync();
         }
 
     }
