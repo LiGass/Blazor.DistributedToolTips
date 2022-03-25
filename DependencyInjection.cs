@@ -1,6 +1,7 @@
 ﻿
 using DistributedToolTips;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 
 namespace DistributedToolTips
 {
@@ -9,6 +10,7 @@ namespace DistributedToolTips
         public static void AddBlazorToolTips(this IServiceCollection services)
         {
             services.AddScoped<IToolTipState, ToolTipState>();
+            Console.WriteLine(Environment.CurrentDirectory);
         }
     }
 }

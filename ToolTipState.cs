@@ -17,7 +17,6 @@ namespace DistributedToolTips
         protected bool _toolTipsActive = false;
         public event Action OnChange;
         public void NotifyStateChanged() => OnChange?.Invoke();
-        protected ToolTipDisplayType _displayType;
         private readonly NavigationManager _navigationManager;
         private int anchorsCount;
         public ToolTipState(NavigationManager navigationManager)
@@ -48,11 +47,5 @@ namespace DistributedToolTips
             anchorsCount++;
             return anchorsCount;
         }
-    }
-    public enum ToolTipDisplayType
-    {
-        Bubble,
-        Container,
-        Modal
     }
 }

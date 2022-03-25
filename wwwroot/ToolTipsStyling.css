@@ -80,7 +80,7 @@
 }
 .ToolTip-Toggler.Toggler-Off:hover svg,
 .ToolTip-Toggler.Toggler-On svg{
-	fill:transparent;
+	fill:white;
 }
 .ToolTip-Toggler.Toggler-Off:hover,
 .ToolTip-Toggler.Toggler-On{
@@ -88,7 +88,7 @@
 }
 .ToolTip-Toggler.Toggler-On:hover,
 .ToolTip-Toggler.Toggler-Off{
-	background:transparent;
+	background:white;
 }
 .ToolTip-Helper{
 	position:absolute;
