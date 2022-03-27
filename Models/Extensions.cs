@@ -42,7 +42,7 @@ namespace DistributedToolTips.Models
 			return pageurlwithoutquery.Split('/');
 		}
 		
-
+		// TODO : /!\ Not valid for wasm not hosted
 		public static IEnumerable<string> ListAvailableFiles(this string baseFolder)
 		{
 			IEnumerable<string> paths;

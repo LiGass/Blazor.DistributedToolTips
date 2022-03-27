@@ -18,7 +18,7 @@
     display: inline-block;
 	margin:auto;
 }
-.ToolTip-Anchor.ToolTip-Displayed
+.ToolTip-Anchor.ToolTips-Active
 {
 	color: #c17009;
 	font-weight:bold;
@@ -27,39 +27,14 @@
 	cursor:help;
 }
 
-.ToolTip-Helper {
-	visibility: hidden;
-	position: absolute;
-	width: 120px;
-	bottom: 100%;
-	margin-left: -60px;
-	background-color: var(--helper-bck);
-	border-color:;
-	border: 2px solid var(--helper-brd);
-	color: var(--helper-txt);
-	text-align: center;
-	padding: 5px 0;
-	border-radius: 6px;
-	z-index: 10000;
-}
 .ToolTip-Helper{
 	visibility:hidden;
 }
 
 
-.ToolTip-Helper::after {
-	content: "";
-	position: absolute;
-	top: 100%;
-	left: 50%;
-	margin-left: -5px;
-	border-width: 5px;
-	border-style: solid;
-	border-color: #6c757d transparent transparent transparent;
-}
 
-.ToolTip-Displayed:hover .ToolTip-Helper,
-.ToolTip-Toggler.Toggler-On:hover .ToolTip-Helper {
+.ToolTips-Active:hover .ToolTip-Helper,
+.ToolTip-Toggler.ToolTips-Active:hover .ToolTip-Helper {
 	visibility: visible;
 }
 
@@ -74,27 +49,140 @@
 	padding:unset;
 }
 
-.ToolTip-Toggler.Toggler-Off svg,
-.ToolTip-Toggler.Toggler-On:hover svg{
+.ToolTip-Toggler.ToolTips-Hidden svg,
+.ToolTip-Toggler.ToolTips-Active:hover svg{
 	fill: #c17009;
 }
-.ToolTip-Toggler.Toggler-Off:hover svg,
-.ToolTip-Toggler.Toggler-On svg{
+.ToolTip-Toggler.ToolTips-Hidden:hover svg,
+.ToolTip-Toggler.ToolTips-Active svg{
 	fill:white;
 }
-.ToolTip-Toggler.Toggler-Off:hover,
-.ToolTip-Toggler.Toggler-On{
+.ToolTip-Toggler.ToolTips-Hidden:hover,
+.ToolTip-Toggler.ToolTips-Active{
 	background:#c17009;
 }
-.ToolTip-Toggler.Toggler-On:hover,
-.ToolTip-Toggler.Toggler-Off{
+.ToolTip-Toggler.ToolTips-Active:hover,
+.ToolTip-Toggler.ToolTips-Hidden{
 	background:white;
 }
+.ToolTip-Helper, .ToolTip-Helper::after{
+	--helper-bck: #e9e8e8;
+	--helper-brd:#6c757d;
+	--helper-txt:#363636;
+}
+@media(prefers-color-scheme:dark)
+{
+	[class*="Helper"]{
+		--helper-bck: #363636;
+		--helper-brd:#6c757d;
+		--helper-txt:#e9e8e8;
+	}	
+}
+
+.ToolTip-Anchor{
+	border-radius:0.25em;
+	position:relative;
+    display: inline-block;
+	margin:auto;
+}
+.ToolTip-Anchor.ToolTips-Active
+{
+	color: #c17009;
+	font-weight:bold;
+    text-decoration: underline dotted #c17009;
+	text-underline-offset:0.25em;
+	cursor:help;
+}
+
+.ToolTip-Toggler{
+	border-radius:0.45em;
+	position:relative;
+    display: inline-block;
+	margin:auto;
+    cursor: help;
+}
+.ToolTip-Toggler span{
+	padding:unset;
+}
+
+.ToolTip-Toggler.ToolTips-Hidden svg,
+.ToolTip-Toggler.ToolTips-Active:hover svg{
+	fill: #c17009;
+}
+.ToolTip-Toggler.ToolTips-Hidden:hover svg,
+.ToolTip-Toggler.ToolTips-Active svg{
+	fill:white;
+}
+.ToolTip-Toggler.ToolTips-Hidden:hover,
+.ToolTip-Toggler.ToolTips-Active{
+	background:#c17009;
+}
+.ToolTip-Toggler.ToolTips-Active:hover,
+.ToolTip-Toggler.ToolTips-Hidden{
+	background:white;
+}
+
 .ToolTip-Helper{
 	position:absolute;
-	left:50%;
-	width:160px;
+	max-width:250px;
+	min-width:160px;
 	border-radius:0.25em;
-	padding:5px 5px;
+	padding:5px;
+	visibility: hidden;
+	background-color: var(--helper-bck);
+	border: 2px solid var(--helper-brd);
+	color: var(--helper-txt);
+	text-align: center;
 	z-index:1;
+}
+
+.ToolTips-Active:hover .ToolTip-Helper,
+.ToolTip-Toggler.ToolTips-Active:hover .ToolTip-Helper {
+	visibility: visible;
+}
+
+.ToolTip-Helper, div[data-helper-position][data-helper-position="top"] .ToolTip-Helper{
+  bottom:100%;
+  left:50%;
+  transform: translate(-50%, -5px);
+}
+div[data-helper-position][data-helper-position="bottom"] .ToolTip-Helper{
+  bottom:0;
+  left:50%;
+  transform: translateX(-50%) translateY(calc(100% + 5px));
+}
+
+div[data-helper-position][data-helper-position="right"] .ToolTip-Helper{
+  bottom:50%;
+  left: calc(100% + 10px);
+  transform: translateY(50%);
+}
+
+div[data-helper-position][data-helper-position="left"] .ToolTip-Helper{
+  bottom:50%;
+  left: 0;
+  transform: translate(calc(-100% - 10px), 50%);
+}
+
+div[data-helper-position][data-helper-position="bottom-left"] .ToolTip-Helper{
+  bottom:0;
+  left: 0;
+  transform: translate(-100%, 100%);
+}
+div[data-helper-position][data-helper-position="bottom-right"] .ToolTip-Helper{
+  bottom:0;
+  left: calc(100% - 10px);
+  transform: translateY(100%);
+}
+
+div[data-helper-position][data-helper-position="top-right"] .ToolTip-Helper{
+  bottom:100%;
+  left:50%;
+  transform: translate(-50%, -5px);
+}
+
+div[data-helper-position][data-helper-position="top-left"] .ToolTip-Helper{
+  bottom:100%;
+  left:0;
+  transform: translateX(-100%);
 }

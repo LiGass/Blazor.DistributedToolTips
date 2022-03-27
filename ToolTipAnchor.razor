@@ -1,8 +1,10 @@
 ﻿@using DistributedToolTips
 @using DistributedToolTips.Models
+@using Microsoft.JSInterop
 @inherits ToolTipElementComponentBase
+@inject IJSRuntime js
 
-<div class="@CssClass">
+<div @ref=refThis class="@CssClass">
 	@ChildContent
 	<div class="@HelperCssClass">
 		@if(Helper==default)
@@ -17,11 +19,10 @@
 </div>
 
 @code {
-    protected override async Task OnParametersSetAsync()
-    {
+	protected override void OnInitialized()
+	{
+		thisElement = new ToolTipAnchorModel(StateContainer);
+		base.OnInitialized();
+	}
 
-		if(string.IsNullOrEmpty(HtmlId)) { HtmlId = $"Anchor-{StateContainer.IncrementAnchorsCount()}"; }
-		thisElement = new ToolTipAnchorModel(StateContainer,HtmlId);
-        await base.OnParametersSetAsync();
-    }
 }

@@ -6,11 +6,9 @@ namespace DistributedToolTips.Models
 	{
 		protected IToolTipState _container;
 		protected ToolTipType _type;
-		protected string _id;
-		public ToolTipElementModel(IToolTipState stateContainer, string identifier)
+		public ToolTipElementModel(IToolTipState stateContainer)
 		{
 			_container = stateContainer;
-			_id = identifier;
 		}
 		public void SetStateContainer(IToolTipState container)
 		{
@@ -32,12 +30,12 @@ namespace DistributedToolTips.Models
 		}
 		public override int GetHashCode()
 		{
-			return HashCode.Combine(_type, _id);
+			return HashCode.Combine(_type);
 		}
 	}
 	public class ToolTipTogglerModel : ToolTipElementModel
 	{
-		public ToolTipTogglerModel(IToolTipState stateContainer, string identifier) : base(stateContainer, identifier)
+		public ToolTipTogglerModel(IToolTipState stateContainer) : base(stateContainer)
 		{
 			_type = ToolTipType.Toggler;
 		}
@@ -48,30 +46,30 @@ namespace DistributedToolTips.Models
 		}
 		public override string GetCssClass()
 		{
-			return base.GetCssClass() + (_container.IsActive ? " Toggler-On" : " Toggler-Off");
+			return base.GetCssClass() + (_container.IsActive ? " ToolTips-Active" : " ToolTips-Hidden");
 		}
 	}
 	public class ToolTipAnchorModel : ToolTipElementModel
 	{
-		public ToolTipAnchorModel(IToolTipState stateContainer, string identifier) : base(stateContainer, identifier)
+		public ToolTipAnchorModel(IToolTipState stateContainer) : base(stateContainer)
 		{
 			_type = ToolTipType.Anchor;
 		}
 		public override string GetCssClass()
 		{
-			return base.GetCssClass() + (_container.IsActive ? " ToolTip-Displayed" : " ToolTip-Hidden");
+			return base.GetCssClass() + (_container.IsActive ? " ToolTips-Active" : " ToolTips-Hidden");
 		}
 
 	}
 	public class ToolTipContainerModel : ToolTipElementModel
 	{
-		public ToolTipContainerModel(IToolTipState stateContainer, string identifier) : base(stateContainer, identifier)
+		public ToolTipContainerModel(IToolTipState stateContainer) : base(stateContainer)
 		{
 			_type = ToolTipType.Container;
 		}
 		public override string GetCssClass()
 		{
-			return base.GetCssClass() + (_container.IsActive ? " Container-Displayed" : " Container-Hidden");
+			return base.GetCssClass() + (_container.IsActive ? " Containers-Active" : " Container-Hidden");
 		}
 
 	}

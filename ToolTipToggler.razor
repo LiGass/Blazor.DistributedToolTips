@@ -1,9 +1,10 @@
 ﻿@using DistributedToolTips;
 @using DistributedToolTips.Models
+@using Microsoft.JSInterop
 @inherits ToolTipElementComponentBase
+@inject IJSRuntime JS
 
-
-<div id="@HtmlId" class="@CssClass" @onclick="@(()=>Toggle())">
+<div @ref=refThis class="@CssClass" @onclick="@(()=>Toggle())">
 	@if(ChildContent == null)
     {
         <svg width="32" height="32" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -23,14 +24,17 @@
 
 
 @code{
-    protected override async Task OnParametersSetAsync()
+    private string result;
+
+    protected override void OnInitialized()
     {
-        thisElement = new ToolTipTogglerModel(StateContainer,HtmlId);
-        await base.OnParametersSetAsync();
+        thisElement = new ToolTipTogglerModel(StateContainer);
+        base.OnInitialized();
     }
 
-    protected void Toggle(){
+    protected async Task Toggle(){
         ((ToolTipTogglerModel)thisElement).ActivateToolTip();
     }
+
 
 }

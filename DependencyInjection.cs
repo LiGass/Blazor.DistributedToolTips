@@ -1,8 +1,5 @@
 ﻿using DistributedToolTips.Models;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.IO;
 
 namespace DistributedToolTips
 {
