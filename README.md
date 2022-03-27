@@ -68,17 +68,20 @@ services.AddBlazorToolTips();
 **Implementing a json file for storing content**
 
 ## Current ToDo List :
-- [ ] Implement State Container
+- [ ] Implement State Container - **Working**
   - [X] Notification to the Components
   - [X] Dependency Injection
   - [ ] Adding options to customize the State Container (?)
-- [X] Implement Toggler Component
+- [X] Implement Toggler Component  - **Working**
   - [X] Blazor Component with minimal styling
   - [ ] Add capturing unexpected parameters  
-- [X] Implement Anchor Component
+- [X] Implement Anchor Component - **Working**
   - [X] Blazor Component with minimal styling
   - [ ] Add capturing unexpected parameters 
-- [ ] Implement Dynamic Display Component
+- [ ] Javascript Background helpers
+  - [X] Added Helper position relative to the Anchor position
+  - [ ] Add handling Anchors loaded as Markup strings 
+- [ ] Implement Dynamic Display Component - **Not Implemented**
   - [ ] Blazor Component with minimal styling
   - [ ] Add Receiving Anchor helper text
 
