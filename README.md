@@ -25,17 +25,20 @@ services.AddBlazorToolTips();
 ```
 
 
-2. Add Css Stylesheet to the _host.cshtml (server) / Index.razor (wasm)
+2. Add Css Stylesheet and JS to the _host.cshtml (server) / Index.razor (wasm)
 
 ```html
 
 ...
+<!-- in your page <head> --> 
 <link src="_content/Blazor.DistributedToolTips/style.css" ref="stylesheet" />
 ...
+<!-- at the bottom of the <body> -->
+<script src="_content/DistributedToolTips/DistributedToolTipsJS.js"></script>
 ```
 
 
-3. Add a ToolTip Toggler somewhere accessible and visible
+3. Add **one** ToolTip Toggler somewhere accessible and visible
 ```html
 // In any accessible component or DOM element (header, footer...)
 ...
