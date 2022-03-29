@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DistributedToolTips", "Dist
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample.ToolTips", "..\Sample.ToolTips\Sample.ToolTips.csproj", "{FE4C9762-95BD-4A93-9EF3-BFB7EE19AF51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.ToolTips.Server", "..\Sample.ToolTips.Server\Sample.ToolTips.Server.csproj", "{140DB7F4-711B-46C6-8F97-15111E9F8D3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample.ToolTips.Server", "..\Sample.ToolTips.Server\Sample.ToolTips.Server.csproj", "{140DB7F4-711B-46C6-8F97-15111E9F8D3F}"
 	ProjectSection(ProjectDependencies) = postProject
 		{A9952FB4-8C53-43CE-9647-C8E20E90CBC7} = {A9952FB4-8C53-43CE-9647-C8E20E90CBC7}
 	EndProjectSection

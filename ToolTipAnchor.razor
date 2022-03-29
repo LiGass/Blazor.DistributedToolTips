@@ -1,28 +1,28 @@
 ﻿@using DistributedToolTips
 @using DistributedToolTips.Models
-@using Microsoft.JSInterop
 @inherits ToolTipElementComponentBase
-@inject IJSRuntime js
 
-<div @ref=refThis class="@CssClass">
+<div @ref=refThis class="@CssClass" data-tooltip="@Visibility">
 	@ChildContent
 	<div class="@HelperCssClass">
-		@if(Helper==default)
+		@if(HelperContent==null)
 		{
-			@HelperAsString
+			@HelperText
 		}
 		else
 		{
-			@Helper
+			@HelperContent
 		}
 	</div>
 </div>
 
 @code {
+	private string CssClass => "ToolTip-Anchor" + (HighlightInlineContentWhenActive ? "":" NoHighlight") + (string.IsNullOrEmpty(CustomCssClass) ? "" : $" {CustomCssClass}");
+
 	protected override void OnInitialized()
 	{
-		thisElement = new ToolTipAnchorModel(StateContainer);
+		AlwaysVisible = (HelperAlwaysDisplayable == null) ? false : (bool)HelperAlwaysDisplayable;
+        HelperCssClass = "ToolTip-Helper" + (AlwaysVisible ? " Permanent":"") + (string.IsNullOrEmpty(CustomHelperCssClass) ? "" : $" {CustomHelperCssClass}");
 		base.OnInitialized();
-	}
-
+    }
 }

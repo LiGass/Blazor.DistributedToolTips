@@ -1,0 +1,33 @@
+﻿@using Microsoft.JSInterop
+@inject IToolTipService TooltipService
+@inject IJSRuntime JS
+@implements IDisposable
+
+
+<div @ref="thisContainer" id="Markup-Container" class="ToolTip-MarkupContainer">
+	if(@ChildContent != null) @ChildContent
+</div>
+@code {
+	[Parameter] public RenderFragment? ChildContent { get; set; }
+	private ElementReference thisContainer;
+	protected override void OnInitialized()
+	{
+		TooltipService.OnChange += UpdateMarkup;
+	}
+
+	protected override async Task OnAfterRenderAsync(bool firstRender)
+	{
+		if (firstRender) await JS.InvokeVoidAsync("jsToolTips.initializeMarkups",thisContainer);
+	}
+	private void UpdateMarkup()
+	{
+		Task.Run(UpdateMarkups);
+		StateHasChanged();
+	}
+	private async Task UpdateMarkups(){
+		await JS.InvokeVoidAsync("jsToolTips.updateMarkups", thisContainer, TooltipService.IsActive);
+	}
+
+	public void Dispose() => TooltipService.OnChange -= StateHasChanged;
+
+}

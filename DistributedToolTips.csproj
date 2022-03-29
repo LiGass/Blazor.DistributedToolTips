@@ -4,6 +4,7 @@
     <TargetFramework>net5.0</TargetFramework>
 	  <ProjectPriIndexName>DistributedToolTips</ProjectPriIndexName>
 	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	  <Nullable>enable</Nullable>
   </PropertyGroup>
 
   
@@ -23,7 +24,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="wwwroot\ToolTipsJsInterop.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 

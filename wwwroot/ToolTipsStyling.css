@@ -1,144 +1,75 @@
-.ToolTip-Helper, .ToolTip-Helper::after{
-	--helper-bck: #e9e8e8;
-	--helper-brd:#6c757d;
-	--helper-txt:#363636;
-}
-@media(prefers-color-scheme:dark)
-{
-	[class*="Helper"]{
-		--helper-bck: #363636;
-		--helper-brd:#6c757d;
-		--helper-txt:#e9e8e8;
-	}	
-}
-
-.ToolTip-Anchor{
-	border-radius:0.25em;
-	position:relative;
-    display: inline-block;
-	margin:auto;
-}
-.ToolTip-Anchor.ToolTips-Active
-{
-	color: #c17009;
-	font-weight:bold;
-    text-decoration: underline dotted #c17009;
-	text-underline-offset:0.25em;
-	cursor:help;
-}
-
-.ToolTip-Helper{
-	visibility:hidden;
-}
-
-
-
-.ToolTips-Active:hover .ToolTip-Helper,
-.ToolTip-Toggler.ToolTips-Active:hover .ToolTip-Helper {
-	visibility: visible;
-}
 
 .ToolTip-Toggler{
 	border-radius:0.45em;
 	position:relative;
     display: inline-block;
-	margin:auto;
     cursor: help;
 }
-.ToolTip-Toggler span{
-	padding:unset;
+div[class="ToolTip-Toggler"]{
+	border-radius:0.45em;
 }
-
-.ToolTip-Toggler.ToolTips-Hidden svg,
-.ToolTip-Toggler.ToolTips-Active:hover svg{
-	fill: #c17009;
+div[class="ToolTip-Toggler"][data-tooltip="hidden"] svg,
+div[class="ToolTip-Toggler"][data-tooltip="displayed"]:hover svg{
+	fill: #ff6a00;
 }
-.ToolTip-Toggler.ToolTips-Hidden:hover svg,
-.ToolTip-Toggler.ToolTips-Active svg{
+div[class="ToolTip-Toggler"][data-tooltip="hidden"]:hover svg,
+div[class="ToolTip-Toggler"][data-tooltip="displayed"] svg{
 	fill:white;
 }
-.ToolTip-Toggler.ToolTips-Hidden:hover,
-.ToolTip-Toggler.ToolTips-Active{
-	background:#c17009;
+div[class="ToolTip-Toggler"][data-tooltip="hidden"]:hover,
+div[class="ToolTip-Toggler"][data-tooltip="displayed"]{
+	background:#ff6a00;
 }
-.ToolTip-Toggler.ToolTips-Active:hover,
-.ToolTip-Toggler.ToolTips-Hidden{
-	background:white;
+div[class="ToolTip-Toggler"][data-tooltip="displayed"]:hover,
+div[class="ToolTip-Toggler"][data-tooltip="hidden"]{
+	background:transparent;
 }
-.ToolTip-Helper, .ToolTip-Helper::after{
-	--helper-bck: #e9e8e8;
-	--helper-brd:#6c757d;
-	--helper-txt:#363636;
-}
-@media(prefers-color-scheme:dark)
-{
-	[class*="Helper"]{
-		--helper-bck: #363636;
-		--helper-brd:#6c757d;
-		--helper-txt:#e9e8e8;
-	}	
-}
-
 .ToolTip-Anchor{
-	border-radius:0.25em;
 	position:relative;
     display: inline-block;
 	margin:auto;
 }
-.ToolTip-Anchor.ToolTips-Active
+.ToolTip-Anchor[data-tooltip="displayed"]
 {
-	color: #c17009;
-	font-weight:bold;
-    text-decoration: underline dotted #c17009;
-	text-underline-offset:0.25em;
 	cursor:help;
 }
-
-.ToolTip-Toggler{
-	border-radius:0.45em;
-	position:relative;
-    display: inline-block;
-	margin:auto;
-    cursor: help;
-}
-.ToolTip-Toggler span{
-	padding:unset;
-}
-
-.ToolTip-Toggler.ToolTips-Hidden svg,
-.ToolTip-Toggler.ToolTips-Active:hover svg{
-	fill: #c17009;
-}
-.ToolTip-Toggler.ToolTips-Hidden:hover svg,
-.ToolTip-Toggler.ToolTips-Active svg{
-	fill:white;
-}
-.ToolTip-Toggler.ToolTips-Hidden:hover,
-.ToolTip-Toggler.ToolTips-Active{
-	background:#c17009;
-}
-.ToolTip-Toggler.ToolTips-Active:hover,
-.ToolTip-Toggler.ToolTips-Hidden{
-	background:white;
-}
-
+div[class="ToolTip-Anchor"][data-tooltip="displayed"] {
+	color: #ff6a00;
+	text-decoration: underline dotted #ff6a00;
+	text-underline-offset:0.25em;
+	border-radius:0.25em;
+}	
 .ToolTip-Helper{
 	position:absolute;
-	max-width:250px;
 	min-width:160px;
-	border-radius:0.25em;
 	padding:5px;
-	visibility: hidden;
+	display:none;
+	z-index:1;
+}
+div[class="ToolTip-Helper"],
+div[class="ToolTip-Helper Permanent"] {
+	--helper-bck: #e9e8e8;
+	--helper-brd:#6c757d;
+	--helper-txt:#363636;
+	border-radius:0.25em;
 	background-color: var(--helper-bck);
 	border: 2px solid var(--helper-brd);
 	color: var(--helper-txt);
 	text-align: center;
-	z-index:1;
+	max-width:80vw;
+	max-height:50vh;
 }
-
-.ToolTips-Active:hover .ToolTip-Helper,
-.ToolTip-Toggler.ToolTips-Active:hover .ToolTip-Helper {
-	visibility: visible;
+@media(prefers-color-scheme:dark) {
+	div[class="ToolTip-Helper"],
+	div[class="ToolTip-Helper Permanent"] {
+		--helper-bck: #363636;
+		--helper-brd:#6c757d;
+		--helper-txt:#e9e8e8;
+	}
+}	
+[data-tooltip="displayed"]:hover .ToolTip-Helper,
+.ToolTip-Toggler:hover .ToolTip-Helper {
+	display:block;
 }
 
 .ToolTip-Helper, div[data-helper-position][data-helper-position="top"] .ToolTip-Helper{
@@ -185,4 +116,8 @@ div[data-helper-position][data-helper-position="top-left"] .ToolTip-Helper{
   bottom:100%;
   left:0;
   transform: translateX(-100%);
+}
+
+div[data-tooltip]:hover .Permanent{	
+	display:block;
 }

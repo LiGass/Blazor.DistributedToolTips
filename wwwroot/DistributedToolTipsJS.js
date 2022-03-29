@@ -1,20 +1,16 @@
-﻿window.sayHello = function(name) {
-		console.log(name);
-};
-
+﻿
 
 window.jsToolTips = {
 	getHelperOfElement: function (element) {
 		return helper = element.getElementsByClassName("ToolTip-Helper")[0];
 	},
-	updateHelperslocation: function (parent) {
+	updateHelperlocation: function (parent) {
 		let parentRect = parent.getBoundingClientRect();
 		let helperRect = parent.getElementsByClassName("ToolTip-Helper")[0].getBoundingClientRect();
 		var helperHeight = helperRect.bottom - helperRect.top;
 		var helperWidth = helperRect.right - helperRect.left;
 		var verticalposition = "top";
 		var horizontalposition = "";
-		console.log(parentRect.right + helperWidth + 10 > window.innerWidth || parentRect.right + helperWidth + 10 > document.body.clientWidth);
 
 		if (parentRect.top - helperHeight < 10) {
 			verticalposition = "bottom";
@@ -30,21 +26,42 @@ window.jsToolTips = {
 	},
 	makeHelperPositionResponsive: function (element) {
 		if (element != null) {
-			var listens = element.hasAttribute("data-is-reactive");
-			if (listens === false) {
+			if (!element.hasAttribute("data-is-reactive")) {
 				element.addEventListener("mouseenter", event => {
-					if (element.classList.contains("ToolTips-Active") || element.classList.contains("ToolTip-Toggler")) {
-					let helper = this.getHelperOfElement(element);
-					this.updateHelperslocation(element,helper);
+					if (element.getAttribute("data-tooltip") =="displayed" || element.classList.contains("ToolTip-Toggler")) {
+						let helper = this.getHelperOfElement(element);
+						this.updateHelperlocation(element,helper);
+					}
+				});
+				element.setAttribute("data-is-reactive", true);
+				if (element.classList.contains("ToolTip-Toggler")) {
+					element.setAttribute("data-tooltip", "displayed");
 				}
-			});
-			element.setAttribute("data-is-reactive", true);
+				return true;
+			}
+			return false;
+		}
+	},
+	initializeMarkups: function (parent) {
+		let elements = parent.querySelectorAll('.ToolTip-Anchor');
+		if (elements.length > 0) {
+			for (var i = 0; i < elements.length; i++) {
+				if (!elements[i].hasAttribute("data-tooltip")) {
+					this.makeHelperPositionResponsive(elements[i]);
+					elements[i].setAttribute("data-tooltip", "hidden");
+				}
 			}
 		}
 	},
-	makeHelperMarkupElementsResponsive: function () {
-		let elements = document.querySelectorAll('[class*="Tool-Tip"]').querySelectorAll(':not(.ToolTip-Helper)');
-		elements.foreach(element => this.makeHelperPositionResponsive(element));
+	updateMarkups: function (parent, displayed) {
+		let elements = parent.querySelectorAll('.ToolTip-Anchor');
+		for (var i = 0; i < elements.length; i++) {
+			if (displayed == true) {
+				elements[i].setAttribute("data-tooltip", "displayed");
+			} else {
+				elements[i].setAttribute("data-tooltip", "hidden");
+			}
+		}
 	}
 
 }; 

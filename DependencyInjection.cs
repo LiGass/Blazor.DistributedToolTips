@@ -7,7 +7,7 @@ namespace DistributedToolTips
     {
         public static void AddBlazorToolTips(this IServiceCollection services)
         {
-            services.AddScoped<IToolTipState, ToolTipState>();
+            services.AddScoped<IToolTipService, ToolTipService>();
         }
 
     }

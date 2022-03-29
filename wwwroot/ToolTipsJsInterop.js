@@ -4,31 +4,39 @@
 export function sayHello(message) {
   console.log(message);
 }
-
-export function findToolTipAnchorsByContent(content) {
-	for (i = 0; i < content.lenth; i++) {
-		console.log(content[i]);
+export function addJavascriptEvent(element) {
+	if (element != null) {
+		var listens = element.hasAttribute("data-reactive-tooltip");
+		if (listens === false) {
+			element.addEventListener("mouseenter", event => {
+				if (element.classList.contains("ToolTip-Toggler") || element.getAttribute("data-tooltip")=="visible") {
+					updateHelperlocation(element);
+				}
+			});
+			element.setAttribute("data-reactive-tooltip", true);
+		}
 	}
 }
+function updateHelperlocation(parent) {
+	let parentRect = parent.getBoundingClientRect();
+	try {
+		let helperRect = parent.getElementsByClassName("ToolTip-Helper")[0].getBoundingClientRect();
+		var helperHeight = helperRect.bottom - helperRect.top;
+		var helperWidth = helperRect.right - helperRect.left;
+		var verticalposition = "top";
+		var horizontalposition = "";
+		console.log(parentRect.right + helperWidth + 10 > window.innerWidth || parentRect.right + helperWidth + 10 > document.body.clientWidth);
 
-
-export function findlocation(id) {
-	let element = document.getElementById(id);
-	let helper = element.getElementsByClassName("ToolTip-Helper");
-	let elementRect = element.getBoundingClientRect();
-	let helperRect = helper.getBoundingClientRect();
-	var helperHeight = helperRect.bottom-helperRect.top;
-	var helperWidth = helperRect.right - helperRect.left;
-	var verticalposition = "top";
-	var horizontalposition = "";
-	if (elementRect.bottom + helperHeight < (window.innerHeight || document.documentElement.clientHeight)) {
-		verticalposition = "bottom";
+		if (parentRect.top - helperHeight < 10) {
+			verticalposition = "bottom";
+		}
+		if (parentRect.left - helperWidth < 10) {
+			horizontalposition += "-right";
+		}
+		else if (parentRect.right + helperWidth + 10 > window.innerWidth || parentRect.right + helperWidth + 10 > document.body.clientWidth) {
+			horizontalposition += "-left";
+		}
+		var position = verticalposition + horizontalposition;
+		parent.setAttribute("data-helper-position", position);
 	}
-	if (elementRect.left - helperWidth < 0) {
-		horizontal += "-right";
-	}
-	else if (elementRect.left - helperWidth < 0) {
-		horizontal += "-left";
-	}
-	return verticalposition + horizontalposition;
 }
