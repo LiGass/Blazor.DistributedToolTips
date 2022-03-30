@@ -33,12 +33,12 @@ services.AddBlazorToolTips();
 <!-- in your page <head> --> 
 <link src="_content/Blazor.ToolTips/style.css" ref="stylesheet" />
 ...
-<!-- at the bottom of the <body> -->
+<!-- before </body> -->
 <script src="_content/ToolTips/ToolTipsJS.js"></script>
 ```
 
 
-3. Add **one** ToolTip Toggler somewhere accessible and visible
+3. Add **one** ToolTip Toggler somewhere accessible and visible - (having more togglers won't cause a problem, but they will all act the same) 
 ```html
 // In any accessible component or DOM element (header, footer...)
 ...
