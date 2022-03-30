@@ -31,10 +31,10 @@ services.AddBlazorToolTips();
 
 ...
 <!-- in your page <head> --> 
-<link src="_content/Blazor.DistributedToolTips/style.css" ref="stylesheet" />
+<link src="_content/Blazor.ToolTips/style.css" ref="stylesheet" />
 ...
 <!-- at the bottom of the <body> -->
-<script src="_content/DistributedToolTips/DistributedToolTipsJS.js"></script>
+<script src="_content/ToolTips/ToolTipsJS.js"></script>
 ```
 
 

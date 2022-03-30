@@ -1,7 +1,7 @@
-﻿using DistributedToolTips.Models;
+﻿
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DistributedToolTips
+namespace ToolTips
 {
 	public static class DependencyInjection
     {

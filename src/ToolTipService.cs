@@ -1,11 +1,8 @@
-﻿using DistributedToolTips.Models;
-using Microsoft.AspNetCore.Components;
+﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Routing;
 using Microsoft.JSInterop;
 using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-namespace DistributedToolTips
+namespace ToolTips
 {
 	public interface IToolTipService : IDisposable
 	{
