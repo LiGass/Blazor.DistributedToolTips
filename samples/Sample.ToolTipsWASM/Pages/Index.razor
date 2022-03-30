@@ -1,5 +1,5 @@
 ﻿@page "/"
-@using DistributedToolTips
+@using ToolTips
 @inject IJSRuntime js
 @inject IToolTipService tooltipState
 <h1> <ToolTipAnchor><InlineContent>Hello World !</InlineContent><HelperContent>From France <img src="/France-heart.svg" width=60/> </HelperContent></ToolTipAnchor></h1>
@@ -7,7 +7,7 @@
 <div class="row pl-3 pt-1 pb-3 fs-5">
     <div class="grid-intro">
 		<div class="grid-intro-content">  This project is a learning project in order to discover Blazor and C#. This is not at all a finished product, nor a professional offering.
-     Any comment, suggestion and help is appreciated. The GitHub repository is here: <a href="https://github.com/LiGass/Blazor.DistributedToolTips" style="color:rgb(154, 10, 233);text-decoration:underline;">Blazor.DistributedToolTips</a><br/>
+     Any comment, suggestion and help is appreciated. The GitHub repository is here: <a href="https://github.com/LiGass/Blazor.ToolTips" style="color:rgb(154, 10, 233);text-decoration:underline;">Blazor.ToolTips</a><br/>
      This library offers a simple service to provide informations about your content to your users.
      It is composed of three core components
         </div>
@@ -115,7 +115,7 @@
                                     <div>
                                         <pre><code class="language-csharp"> 
         &lt;ToolTipAnchor&gt;
-            &lt;InlineContent&gt;&lt;img src="_content/DistributedToolTips/fr.svg" width=32/&gt;&lt;/InlineContent&gt;
+            &lt;InlineContent&gt;&lt;img src="_content/ToolTips/fr.svg" width=32/&gt;&lt;/InlineContent&gt;
             &lt;HelperContent&gt;
                 Display Tips for the page 
             &lt;/HelperContent&gt;
@@ -206,9 +206,9 @@ Lorem ipsum dolor sit amet, &lt;/ToolTipAnchor&gt;consectetur adipiscing elit. I
                         <div >
                             <pre><code class="language-cshtml"> 
 
-&lt;DistributedToolTips.ToolTipsMarkupContainer&gt;
+&lt;ToolTips.ToolTipsMarkupContainer&gt;
 		@@contentMarkup
-&lt;/DistributedToolTips.ToolTipsMarkupContainer&gt;
+&lt;/ToolTips.ToolTipsMarkupContainer&gt;
                             </code></pre>
                         </div>
                     </div>

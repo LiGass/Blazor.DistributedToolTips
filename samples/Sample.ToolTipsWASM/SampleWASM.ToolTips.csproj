@@ -15,6 +15,10 @@
     <PackageReference Include="System.Net.Http.Json" Version="5.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\ToolTips.csproj" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <Resource Include="Resources\fetch-data.json" />
