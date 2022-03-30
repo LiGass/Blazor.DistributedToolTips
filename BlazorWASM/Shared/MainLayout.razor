@@ -1,5 +1,4 @@
-﻿@using ToolTips
-@inherits LayoutComponentBase
+﻿@inherits LayoutComponentBase
 
 <div class="page">
     <div class="sidebar">
@@ -8,11 +7,12 @@
 
     <div class="main">
         <div class="top-row px-4">
-            <a href="http://blazor.net" target="_blank" class="ml-md-auto">About</a>
             <div>
                 <ToolTipToggler HelperText=" This is the toggler, click it!"></ToolTipToggler>
             </div>
+            <a href="http://blazor.net" target="_blank" class="ml-md-auto">About</a>
         </div>
+
         <div class="content px-4">
             @Body
         </div>

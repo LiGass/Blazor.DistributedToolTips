@@ -3,10 +3,9 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Sample.ToolTips.WASM;
 using ToolTips;
 
-namespace SampleWASM.ToolTips
+namespace SampleWASM_ToolTips
 {
 	public class Program
 	{
