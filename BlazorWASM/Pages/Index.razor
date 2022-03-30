@@ -2,7 +2,7 @@
 @using ToolTips
 @inject IJSRuntime js
 @inject IToolTipService tooltipState
-<h1> <ToolTipAnchor><InlineContent>Hello World !</InlineContent><HelperContent>From France <img src="/France-heart.svg" width=60/> </HelperContent></ToolTipAnchor></h1>
+<h2> <ToolTipAnchor><InlineContent>Hello World !</InlineContent><HelperContent>From France <img src="/France-heart.svg" width=60/> </HelperContent></ToolTipAnchor></h2>
 <hr />
 <div class="row pl-3 pt-1 pb-3 fs-5">
     <div class="grid-intro">
@@ -29,20 +29,20 @@
 </div>
 
 
-<h1> 3 core Elements </h1>
+<h3> 3 core Elements </h3>
 <hr />
 <div class="row pl-3 pt-1 pb-3 fs-5">
     <div class="d-flex flex-column w-100">   
         <div class="d-flex">
             <ul class="nav nav-tabs active nav-fill flex-grow-1" id="myTab" role="tablist">
               <li class="nav-item active d-flex flex-grow-1" role="presentation">
-                <button class="nav-link active flex-grow-1" id="toggler-tab" data-bs-toggle="tab" data-bs-target="#toggler" type="button" role="tab" aria-controls="toggler" aria-selected="true"><h4>Toggler</h4></button>
+                <button class="nav-link active flex-grow-1" id="toggler-tab" data-bs-toggle="tab" data-bs-target="#toggler" type="button" role="tab" aria-controls="toggler" aria-selected="true"><strong>Toggler</strong></button>
               </li>
               <li class="nav-item active d-flex flex-grow-1" role="presentation">
-                <button class="nav-link flex-grow-1" id="anchor-tab" data-bs-toggle="tab" data-bs-target="#anchor" type="button" role="tab" aria-controls="anchor" aria-selected="false"><h4>Anchor</h4></button>
+                <button class="nav-link flex-grow-1" id="anchor-tab" data-bs-toggle="tab" data-bs-target="#anchor" type="button" role="tab" aria-controls="anchor" aria-selected="false"><strong>Anchor</strong></button>
               </li>
               <li class="nav-item active d-flex flex-grow-1" role="presentation">
-                <button class="nav-link flex-grow-1" id="markup-tab" data-bs-toggle="tab" data-bs-target="#markup" type="button" role="tab" aria-controls="markup" aria-selected="false"><h4>Markup Container</h4></button>
+                <button class="nav-link flex-grow-1" id="markup-tab" data-bs-toggle="tab" data-bs-target="#markup" type="button" role="tab" aria-controls="markup" aria-selected="false"><strong>Markup Container</strong></button>
               </li>
             </ul>
         </div>
@@ -50,11 +50,11 @@
             <div class="tab-content pt-1 pb-3 border border-grey rounded-bottom" id="myTabContent">
               <div class="tab-pane fade show active row flex-column justify-content-center" id="toggler" role="tabpanel" aria-labelledby="toggler-tab">
 			        <div class="row flex-column flex-fill mx-5 mt-2">
-                        <h3>Definition</h3><br/>
+                        <h4>Definition</h4><br/>
                         <p class="card-text"><strong>The Toggler</strong> is the UI button that allows the user to display - or not - the helpful tips hidden across your website. It should be placed somewhere visible and accessible.</p>
                     </div>
                     <div class="row flex-column flex-fill mx-5 mt-2"><hr />
-                        <h3>Razor syntax</h3><br/>
+                        <h4>Razor syntax</h4><br/>
                         <div >
                             <pre><code class="language-cshtml"> 
 &lt;div class='top-row px-4'&gt;
@@ -67,8 +67,8 @@
                         </div>
                     </div>
                     <div class="row flex-column flex-fill mx-5 mt-2"><hr />
-                        <h3>Renders as </h3><br/>
-                        <div>
+                        <h4>Renders as </h4><br/>
+                        <div style="background-color:lightgray;">
                             <div class="top-row px-4">
                                 <a href="http://blazor.net" target="_blank" class="ml-md-auto">About</a>
                                 <div>
@@ -78,12 +78,12 @@
                         </div>
                     </div>
                     <div class="row flex-column flex-fill mx-5 mt-2"><hr />
-                        <h3>The parameters</h3><br/>
+                        <h4>The parameters</h4><br/>
                         
                         <ToolTipAnchor HelperAlwaysDisplayable=true HighlightInlineContentWhenActive=false>
                             <InlineContent>
-                            <div >
-                                <pre><code class="language-csharp"> 
+                                <div >
+                                    <pre><code class="language-csharp"> 
 // Always shows the Helper on hover
 [Parameter] public bool HelperAlwaysDisplayable { get; set; } = true;
 // Uses default styling to highlight content (if none passed as CustomCssClass)
@@ -100,8 +100,8 @@
 [Parameter] public string CustomCssClass { get; set; } = string.Empty; 
 // Customize the helper content when active
 [Parameter] public string CustomHelperCssClass { get; set; } = string.Empty; 
-                                </code></pre>
-                            </div>
+                                    </code></pre>
+                                </div>
                             </InlineContent>
                             <HelperContent>
                                 <div>
@@ -124,17 +124,16 @@
                                     </div>
                                 </div>
                             </HelperContent>
-                    
                         </ToolTipAnchor>
                     </div>
               </div>
-              <div class="tab-pane fade row flex-column justify-content-center" id="anchor" role="tabpanel" aria-labelledby="anchor-tab">
+              <div class="tab-pane fade row flex-column flex-fill" id="anchor" role="tabpanel" aria-labelledby="anchor-tab">
 			        <div class="row flex-column flex-fill mx-5 mt-2">
-                        <h3>Description</h3><br/>
+                        <h4>Description</h4><br/>
                         <p class="card-text"><strong>The anchors</strong> wrap the actual elements for which you want to provide additional help. They are inline components that, when hovered, provide additional context or tips to better your users experience. They can be scattered across your website, about wherever you want.</p>
                     </div>
                     <div class="row flex-column flex-fill mx-5 mt-2"><hr />
-                        <h3>Razor syntax</h3><br/>
+                        <h4>Razor syntax</h4><br/>
                         <div >
                             <pre><code class="language-cshtml"> 
 &lt;p&gt;Lorem ipsum dolor sit amet, &lt;ToolTipAnchor HelperText="This content seems like latin, but it's gibberish"&gt;
@@ -143,15 +142,18 @@ Lorem ipsum dolor sit amet, &lt;/ToolTipAnchor&gt;consectetur adipiscing elit. I
                         </div>
                     </div>
                     <div class="row flex-column flex-fill mx-5 mt-2"><hr />
-                        <h3>Renders as </h3><br/>
-                        <div><p>Lorem ipsum dolor sit amet, <ToolTipAnchor HelperText="This content sounds like latin, but it's gibberish">Lorem ipsum dolor sit amet,</ToolTipAnchor> consectetur adipiscing elit. Integer vehicula scelerisque purus a ultricies. </p></div>
-                        <div class="row flex-column flex-shrink-1 mx-3 mt-2"><hr />
+                        <h4>Renders as </h4><br/>
+                        <div style="background-color:lightgray;">
+                            <p>Lorem ipsum dolor sit amet, <ToolTipAnchor HelperText="This content sounds like latin, but it's gibberish">Lorem ipsum dolor sit amet,</ToolTipAnchor> consectetur adipiscing elit. Integer vehicula scelerisque purus a ultricies. </p>
+                        </div>
                     </div>
-                    <h3>The parameters</h3><br/>
+                    
+                    <div class="row flex-column flex-fill mx-5 mt-2"><hr />
+                        <h4>The parameters</h4><br/>
                         <ToolTipAnchor HelperAlwaysDisplayable=true HighlightInlineContentWhenActive=false>
                             <InlineContent>
-                        <div>
-                            <pre><code class="language-csharp"> 
+                                <div>
+                                <pre><code class="language-csharp"> 
 // Always shows the Helper on hover
 [Parameter] public bool HelperAlwaysDisplayable { get; set; } = false;
 // Uses default styling to highlight content (if none passed as CustomCssClass)
@@ -168,44 +170,42 @@ Lorem ipsum dolor sit amet, &lt;/ToolTipAnchor&gt;consectetur adipiscing elit. I
 [Parameter] public string CustomCssClass { get; set; } = string.Empty; 
 // Customize the helper content when active
 [Parameter] public string CustomHelperCssClass { get; set; } = string.Empty; 
-                            </code></pre>
-                        </div>
-                        </InlineContent>
-                        <HelperContent>
-                            <div>
-                                <h4>For Example :</h4>
+                                </code></pre>
+                                </div>
+                            </InlineContent>
+                            <HelperContent>
                                 <div>
-                            <pre><code class="language-csharp"> 
+                                    <h4>For Example :</h4>
+                                    <div>
+                                        <pre><code class="language-csharp"> 
 &lt;ToolTipAnchor HelperText="From France"&gt;Hello World !&lt;/ToolTipAnchor&gt;
-                                </code></pre>
-                            </div>
-                            <h4>but :</h4>
-                            <div>
-                                <pre><code class="language-csharp"> 
+                                        </code></pre>
+                                    </div>
+                                    <h4>but :</h4>
+                                    <div>
+                                        <pre><code class="language-csharp"> 
 &lt;ToolTipAnchor &gt;
-    &lt;InlineContent>Hello World !&lt;/InlineContent&gt;
-    &lt;HelperContent&gt;
-        From France &lt;img src="/fr.svg" width=20/&gt; 
-    &lt;/HelperContent&gt;
+&lt;InlineContent>Hello World !&lt;/InlineContent&gt;
+&lt;HelperContent&gt;
+From France &lt;img src="/fr.svg" width=20/&gt; 
+&lt;/HelperContent&gt;
 &lt;/ToolTipAnchor &gt;
-                                </code></pre>
-                            </div>
-                            </div>
-                        </HelperContent>
-                    
+                                        </code></pre>
+                                </div>
+                                </div>
+                            </HelperContent>
                         </ToolTipAnchor>
                     </div>
                 </div>
-              <div class="tab-pane fade row flex-column justify-content-center" id="markup" role="tabpanel" aria-labelledby="markup-tab">
+              <div class="tab-pane fade row flex-column flex-fill" id="markup" role="tabpanel" aria-labelledby="markup-tab">
 			        <div class="row flex-column flex-fill mx-5 mt-2">
-                        <h3>Description</h3><br/>
+                        <h4>Description</h4><br/>
                        <p class="card-text"><strong>The MarkupContainer</strong> allows you to keep using tooltips on dynamic content, that you retrieved from your database, because not everything on a website is static content This element can wrap a blog post that you already formated before storing away, or localized markup strings, and provide the same fonctionalities as static ToolTipAnchors.</p>
                     </div>
                     <div class="row flex-column flex-fill mx-5 mt-2"><hr />
-                        <h3>Razor syntax</h3><br/>
+                        <h4>Razor syntax</h4><br/>
                         <div >
                             <pre><code class="language-cshtml"> 
-
 &lt;ToolTips.ToolTipsMarkupContainer&gt;
 		@@contentMarkup
 &lt;/ToolTips.ToolTipsMarkupContainer&gt;
@@ -213,11 +213,10 @@ Lorem ipsum dolor sit amet, &lt;/ToolTipAnchor&gt;consectetur adipiscing elit. I
                         </div>
                     </div>
                     <div class="row flex-column flex-fill mx-5 mt-2"><hr />
-                        <h3>The parameters</h3><br/>
+                        <h4>The parameters</h4><br/>
                         <div >
                             <pre><code class="language-csharp"> 
 [Parameter] public RenderFragment ChildContent { get; set; } // The inline content always displayed
-        
                             </code></pre>
                         </div>
                     </div>
