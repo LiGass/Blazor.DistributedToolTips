@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-	  <ProjectPriIndexName>DistributedToolTips</ProjectPriIndexName>
+	  <ProjectPriIndexName>ToolTips</ProjectPriIndexName>
 	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	  <Nullable>enable</Nullable>
 	  <RootNamespace>ToolTips</RootNamespace>
@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="wwwroot\DistributedToolTipsJS.js">
+    <Content Update="wwwroot\ToolTipsJS.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="wwwroot\ToolTipsJsInterop.js">
