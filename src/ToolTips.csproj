@@ -5,6 +5,7 @@
 	  <ProjectPriIndexName>DistributedToolTips</ProjectPriIndexName>
 	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	  <Nullable>enable</Nullable>
+	  <RootNamespace>ToolTips</RootNamespace>
   </PropertyGroup>
 
   
