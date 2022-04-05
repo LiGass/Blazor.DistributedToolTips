@@ -27,7 +27,6 @@ div[class="ToolTip-Toggler"][data-tooltip="hidden"]{
 .ToolTip-Anchor{
 	position:relative;
     display: inline-block;
-	margin:auto;
 }
 .ToolTip-Anchor[data-tooltip="displayed"]
 {

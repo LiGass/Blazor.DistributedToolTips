@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.ToolTipsSERVER", "Sample.ToolTipsSERVER\Sample.ToolTipsSERVER.csproj", "{23009C80-5BBD-47DD-A066-C2DF71C0FE7D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23009C80-5BBD-47DD-A066-C2DF71C0FE7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23009C80-5BBD-47DD-A066-C2DF71C0FE7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23009C80-5BBD-47DD-A066-C2DF71C0FE7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23009C80-5BBD-47DD-A066-C2DF71C0FE7D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {17EEA09B-D5D9-4805-8183-A4E43A474ED9}
+	EndGlobalSection
+EndGlobal

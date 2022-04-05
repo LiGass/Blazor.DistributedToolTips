@@ -2,10 +2,17 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-	  <ProjectPriIndexName>DistributedToolTips</ProjectPriIndexName>
+	  <ProjectPriIndexName>ToolTips</ProjectPriIndexName>
 	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	  <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Sample.ToolTipsSERVER\**" />
+    <Content Remove="Sample.ToolTipsSERVER\**" />
+    <EmbeddedResource Remove="Sample.ToolTipsSERVER\**" />
+    <None Remove="Sample.ToolTipsSERVER\**" />
+  </ItemGroup>
 
   
   <ItemGroup>
@@ -16,7 +23,6 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.0.14" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
   <ItemGroup>
