@@ -31,14 +31,14 @@ services.AddBlazorToolTips();
 
 ...
 <!-- in your page <head> --> 
-<link src="_content/Blazor.DistributedToolTips/style.css" ref="stylesheet" />
+<link src="_content/Blazor.ToolTips/style.css" ref="stylesheet" />
 ...
-<!-- at the bottom of the <body> -->
-<script src="_content/DistributedToolTips/DistributedToolTipsJS.js"></script>
+<!-- before </body> -->
+<script src="_content/ToolTips/ToolTipsJS.js"></script>
 ```
 
 
-3. Add **one** ToolTip Toggler somewhere accessible and visible
+3. Add **one** ToolTip Toggler somewhere accessible and visible - (having more togglers won't cause a problem, but they will all act the same) 
 ```html
 // In any accessible component or DOM element (header, footer...)
 ...
@@ -65,11 +65,6 @@ services.AddBlazorToolTips();
 
 # What's next
 
-## Difficulties:
-**Keeping it simple, stupid** and **Being SOLID**
-
-**Implementing a json file for storing content**
-
 ## Current ToDo List :
 - [ ] Implement State Container - **Working**
   - [X] Notification to the Components
@@ -77,18 +72,13 @@ services.AddBlazorToolTips();
   - [ ] Adding options to customize the State Container (?)
 - [X] Implement Toggler Component  - **Working**
   - [X] Blazor Component with minimal styling
-  - [ ] Add capturing unexpected parameters  
 - [X] Implement Anchor Component - **Working**
   - [X] Blazor Component with minimal styling
-  - [ ] Add capturing unexpected parameters 
-- [ ] Javascript Background helpers
+- [X] Javascript Background helpers
   - [X] Added Helper position relative to the Anchor position
-  - [ ] Add handling Anchors loaded as Markup strings 
-- [ ] Implement Dynamic Display Component - **Not Implemented**
-  - [ ] Blazor Component with minimal styling
-  - [ ] Add Receiving Anchor helper text
+  - [X] Add handling Anchors loaded as Markup strings 
 
 ## Next in line / Possible follow-ups :
+- [ ] Add file fetching for helper texts (json/resx...)
+- [ ] Add Tutorial Display
 - [ ] Implement unit tests
-- [ ] Add file storage and fetching for helper texts (json/resx...)
-- [ ] Create Javascript back-end implement on AfterRender
